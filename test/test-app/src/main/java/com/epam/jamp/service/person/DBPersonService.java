@@ -25,7 +25,7 @@ public class DBPersonService implements PersonService {
     }
 
     public List<Person> readAll() throws Exception {
-        List<Person> persons = null;
+        List<Person> persons;
         try {
             persons = storage.getAll();
         } catch (Exception e) {
@@ -39,7 +39,7 @@ public class DBPersonService implements PersonService {
         if (name == null || name.length() == 0) {
             throw new RuntimeException("Incorrect parameter.");
         }
-        List<Person> persons = null;
+        List<Person> persons;
         try {
             persons = storage.find(name);
         } catch (Exception e) {
