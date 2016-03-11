@@ -19,6 +19,15 @@ public class StringUtilTest {
         assertEquals("String are not equals.", expected, revString);
     }
 
+    @Test
+    public void getReverseStringShouldNotReturnNullForCorrectParameter() throws Exception {
+        String source = "Hello";
+
+        String result = StringUtil.getReverseString(source);
+
+        assertNotNull(result);
+    }
+
     @Test(expected = IllegalArgumentException.class)
     public void getReverseStringShouldThrowExceptionForEmptyString() throws Exception {
         StringUtil.getReverseString("");
